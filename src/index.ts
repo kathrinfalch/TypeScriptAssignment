@@ -22,3 +22,4 @@ function doSmth(e: UIEvent) {
   const val = e.target as HTMLInputElement;
   console.log(e, val.value);
 }
+console.log("test")
