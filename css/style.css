@@ -45,7 +45,6 @@ body{
     max-height: 100%;
 }
 
-
 /* Main */
 main{
     z-index: 1;
@@ -56,6 +55,110 @@ main .container{
     width: 1000px;
     max-width: 100%;
     margin:0 auto;
+}
+
+.eingabefelder .reihe{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.eingabefelder .reihe .spalte-50{
+    width: 50%;
+    text-align: center;
+}
+
+.eingabefelder h4{
+    margin-top:0;
+    margin-bottom: 30px;
+    font-size: 26px;
+    color: #2f3542;
+}
+
+.eingabefelder .name input{
+    background: #2f3542;
+    color: #fff;
+    border: none;
+    padding-top: 12.3px;
+    padding-bottom: 12.3px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 16px;
+    width: 250px;
+    outline: none;
+}
+
+.eingabefelder .sternzeichen{
+    margin-top: 15px;
+}
+
+.eingabefelder .sternzeichen-auswahl{
+    background: #2f3542;
+    color: #fff;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 16px;
+    width: 250px;
+    position: relative;
+    margin:0 auto;
+}
+
+.eingabefelder .sternzeichen-menu{
+    position: absolute;
+    top:100%;
+    left:0;
+    width: 100%;
+    opacity: 0;
+    background-color: #f0cbcb;
+    border-radius: 22px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: 600ms;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.eingabefelder .sternzeichen-auswahl:hover .sternzeichen-menu{
+    opacity: 1;
+    margin-top: 5px;
+    color: #2f3542;
+}
+
+.eingabefelder .steinzeichen-element:hover{
+    cursor: pointer;
+    color: #6d7991;
+}
+
+#jetztBerechnen{
+    background: #f0cbcb;
+    color: #2f3542;
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 250px;
+    position: relative;
+    margin:60px auto 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: 600ms;
+}
+
+#jetztBerechnen:hover{
+    background-color: #2f3542;
+    color: #fff;
+    cursor: pointer;
 }
 
 .beschreibung {
