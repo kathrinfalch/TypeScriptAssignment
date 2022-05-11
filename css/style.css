@@ -77,6 +77,7 @@ main .container{
 
 .eingabefelder .name input{
     background: #2f3542;
+    font-family:'Poppins', sans-serif;
     color: #fff;
     border: none;
     padding-top: 12.3px;
@@ -146,6 +147,7 @@ main .container{
     padding-right: 30px;
     border-radius: 100px;
     text-align: center;
+    font-family:'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 600;
     width: 250px;
@@ -153,12 +155,94 @@ main .container{
     margin:60px auto 0;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     transition: 600ms;
+    display: flex;
+    justify-content: center;
 }
 
 #jetztBerechnen:hover{
     background-color: #2f3542;
     color: #fff;
     cursor: pointer;
+}
+
+#ergebnis{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 600ms;
+}
+
+#ergebnis.in{
+    opacity: 1;
+    visibility: visible;
+}
+
+#ergebnis .inner{
+    max-width: 100%;
+    width: 550px;
+    padding:90px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 22px;
+}
+
+#ergebnis h3{
+    font-size: 48px;
+    line-height: 48px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2f3542;
+}
+
+#ergebnis #ladebalken{
+    background-color: #f4e3e3;
+    margin-top: 30px;
+    width: 100%;
+    height: 30px;
+    border-radius: 22px;
+    position: relative;
+    overflow: hidden;
+}
+
+#ergebnis #ladebalken-anteil{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 100%;
+    background-color: #F0CBCB;
+    transition: 600ms;
+}
+
+#ergebnis #ladebalken-prozent{
+    position: relative;
+    z-index: 1;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+#closeErgebnis{
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 600ms;
+    color: #2f3542;
+}
+
+#closeErgebnis:hover{
+    color: #6d7991;
 }
 
 .beschreibung {
