@@ -129,28 +129,44 @@ function berechnen(){
   let sternzeichen1 = sternzeichen1Input.innerHTML;
   let sternzeichen2 = sternzeichen2Input.innerHTML;
 
-  let kombi1: string = sternzeichen1 + ":" + sternzeichen2;
-  let kombi2: string = sternzeichen2 + ":" + sternzeichen1;
+  let error = false;
 
-  let punkte = 0;
+  if(sternzeichen1 == "Bitte wählen..." || sternzeichen2 == "Bitte wählen...") {
+    error = true;
+  }
+  else if(name1.length == 0 || name2.length == 0 ) {
+    error = true;
+  }
 
-  if( arrayA.indexOf( kombi1 ) > -1 || arrayA.indexOf( kombi2 ) > -1 ){
-    punkte = rechnungA();
-  }
-  else if( arrayB.indexOf( kombi1 ) > -1 || arrayB.indexOf( kombi2 ) > -1 ){
-    punkte = rechnungB();
-  }
-  else if( arrayC.indexOf( kombi1 ) > -1 || arrayC.indexOf( kombi2 ) > -1 ){
-    punkte = rechnungC();
-  }
-  else if( arrayD.indexOf( kombi1 ) > -1 || arrayD.indexOf( kombi2 ) > -1 ){
-    punkte = rechnungD();
+  if(!error){
+    let kombi1: string = sternzeichen1 + ":" + sternzeichen2;
+    let kombi2: string = sternzeichen2 + ":" + sternzeichen1;
+
+    let punkte = 0;
+
+    if( arrayA.indexOf( kombi1 ) > -1 || arrayA.indexOf( kombi2 ) > -1 ){
+      punkte = rechnungA();
+    }
+    else if( arrayB.indexOf( kombi1 ) > -1 || arrayB.indexOf( kombi2 ) > -1 ){
+      punkte = rechnungB();
+    }
+    else if( arrayC.indexOf( kombi1 ) > -1 || arrayC.indexOf( kombi2 ) > -1 ){
+      punkte = rechnungC();
+    }
+    else if( arrayD.indexOf( kombi1 ) > -1 || arrayD.indexOf( kombi2 ) > -1 ){
+      punkte = rechnungD();
+    }
+    else{
+      punkte = rechnungE();
+    }
+
+    showErgebnis(punkte, name2);
+
   }
   else{
-    punkte = rechnungE();
+    alert("Bitte Namen eingeben und Sternzeichen auswählen.");
   }
 
-  showErgebnis(punkte, name2);
 }
 
 function showErgebnis(punkte: number, name2: string){
@@ -163,8 +179,9 @@ function showErgebnis(punkte: number, name2: string){
 
   let text = "";
 
+
   if(punkte >= 75){
-    text = "Love is in the air! Ihr beide seid wie für einander gemacht.";
+    text = "Love is in the air! Ihr beide seid wie für einander gemacht. Dir und " + name2 + " steht nichts im Weg. Vergiss nicht, yourcrush. als deinen persönlichen Amor in deiner Hochzeitsrede zu erwähnen!";
   }
   else if(punkte >= 50){
     text = "So wie es aussieht, passen du und " + name2 + " gut zusammen. Wie in jeder Beziehung könntet auch ihr gute und schlechte Zeiten erleben – was euch jedoch nicht davon abhalten sollte, es miteinander zu probieren! Wenn mal was nicht läuft wie du es willst, solltest du dich nicht scheuen es vor " + name2 + " anzusprechen. So könnte wirklich was aus euch beiden werden!";
