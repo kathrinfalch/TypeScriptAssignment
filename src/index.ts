@@ -1,3 +1,6 @@
+import { arrayA, arrayB, arrayC, arrayD } from "./const";
+import { rechnungA, rechnungB, rechnungC, rechnungD, rechnungE } from "./zufallszahlen";
+
 const name1Input = document.getElementById("name-1") as HTMLInputElement;
 const name2Input = document.getElementById("name-2") as HTMLInputElement;
 
@@ -16,87 +19,8 @@ const ladebalkenProzent = document.getElementById("ladebalken-prozent") as HTMLD
 
 const closeErgebnis = document.getElementById("closeErgebnis") as HTMLDivElement;
 
-// 75 - 100%
-const arrayA = [
-  "Steinbock:Fische",
-  "Fische:Skorpion",
-  "Zwilling:Stier",
-  "Waage:Widder",
-  "Widder:Steinbock"
-];
-
-// 50 - 74%
-const arrayB = [
-  "Wassermann:Wassermann",
-  "Steinbock:Steinbock",
-  "Jungfrau:Jungfrau",
-  "Widder:Widder",
-  "Zwillinge:Zwillinge",
-  "Schütze:Widder",
-  "Stier:Waage",
-  "Löwe:Widder",
-  "Skorpion:Fische"
-];
-
-
-// 25 - 49%
-const arrayC = [
-  "Steinbock:Jungfrau",
-  "Steinbock:Stier",
-  "Steinbock:Skorpion",
-  "Wassermann:Waage",
-  "Wassermann:Zwillinge",
-  "Fische:Krebs",
-  "Widder:Wassermann",
-  "Stier:Krebs",
-  "Stier:Jungfrau",
-  "Zwillinge:Waage",
-  "Zwillinge:Löwe",
-  "Krebs:Löwe",
-  "Krebs:Skorpion",
-  "Löwe:Waage",
-  "Jungfrau:Krebs",
-  "Jungfrau:Skorpion",
-  "Schütze:Löwe",
-  "Schütze:Waage",
-  "Schütze:Wassermann"
-];
-
-
-// 0 - 24%
-const arrayD = [
-  "Steinbock:Waage",
-  "Steinbock:Widder",
-  "Wassermann:Widder",
-  "Wassermann:Skorpion",
-  "Fische:Löwe",
-  "Fische:Jungfrau",
-  "Fische:Schütze",
-  "Widder:Stier",
-  "Widder:Krebs",
-  "Stier:Wassermann",
-  "Zwillinge:Skorpion",
-  "Krebs:Zwillinge",
-  "Krebs:Schütze",
-  "Krebs:Waage",
-  "Löwe:Stier",
-  "Löwe:Jungfrau",
-  "Löwe:Skorpion",
-  "Jungfrau:Zwillinge",
-  "Jungfrau:Waage",
-  "Jungfrau:Wassermann",
-  "Waage:Skorpion",
-  "Waage:Fische",
-  "Skorpion:Widder",
-  "Skorpion:Stier",
-  "Schütze:Stier",
-  "Schütze:Jungfrau"
-];
-
-
 
 jetztBerechnen.addEventListener("click", berechnen);
-
 
 
 function sternzeichenMenu(){
@@ -195,33 +119,6 @@ function showErgebnis(punkte: number, name2: string){
 
   ergebnisText.innerHTML = text;
 }
-
-
-function rechnungA(){
-  // 75-100%
-  return Math.floor(Math.random() * 26 + 75);
-}
-
-function rechnungB(){
-  // 50-74%
-  return Math.floor(Math.random() * 25 + 50);
-}
-
-function rechnungC(){
-  // 25-49%
-  return Math.floor(Math.random() * 25 + 25);
-}
-
-function rechnungD(){
-  // 0-24%
-  return Math.floor(Math.random() * 25);
-}
-
-function rechnungE(){
-  // Sonstige
-  return Math.floor(Math.random() * 100);
-}
-
 
 closeErgebnis.addEventListener("click", ergebnisSchliessen);
 
